@@ -6,13 +6,19 @@ interface AccordionProps {
   title: string
   children: React.ReactNode
   defaultOpen?: boolean
+  className?: string // ✅ Add this line
 }
 
-const Accordion: React.FC<AccordionProps> = ({ title, children, defaultOpen = false }) => {
+const Accordion: React.FC<AccordionProps> = ({
+  title,
+  children,
+  defaultOpen = false,
+  className = '', // ✅ Add this default
+}) => {
   const [isOpen, setIsOpen] = useState(defaultOpen)
 
   return (
-    <div className="border-b border-gray-200 last:border-b-0">
+    <div className={`border-b border-gray-200 last:border-b-0 ${className}`}>
       <button
         className="w-full flex justify-between items-center py-4 text-left focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
