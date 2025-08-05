@@ -58,7 +58,7 @@ const AboutPage = () => {
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
                 <p className="text-lg text-gray-600 mb-6">
-                  At ADmyBRAND, we're on a mission to revolutionize digital marketing through artificial intelligence. 
+                  At ADmyBRAND, we are on a mission to revolutionize digital marketing through artificial intelligence. 
                   We believe in creating tools that make sophisticated marketing accessible to businesses of all sizes.
                 </p>
                 <ul className="space-y-4">
