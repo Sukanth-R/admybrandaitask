@@ -15,7 +15,6 @@ const Navbar: React.FC = () => {
   const pathname = usePathname()
   const router = useRouter()
 
-  // Set client-side flag and track hash changes
   useEffect(() => {
     setIsClient(true)
     setCurrentHash(window.location.hash)
@@ -28,7 +27,17 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('hashchange', handleHashChange)
   }, [])
 
-  const handleMenuClose = () => setIsMenuOpen(false)
+  const handleMenuClose = () => {
+    setIsMenuOpen(false)
+    document.body.style.overflow = 'auto' // Re-enable scrolling
+  }
+
+  const handleMenuToggle = () => {
+    setIsMenuOpen(prev => {
+      document.body.style.overflow = !prev ? 'hidden' : 'auto'
+      return !prev
+    })
+  }
 
   const openForm = (type: 'signin' | 'signup' | 'get-started') => {
     setActiveForm(type)
@@ -60,15 +69,18 @@ const Navbar: React.FC = () => {
     }
   }
 
-  // Close menu when route changes
   useEffect(() => {
     handleMenuClose()
   }, [pathname])
 
-  // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (isMenuOpen && !(event.target as HTMLElement).closest('.mobile-menu-container')) {
+      const target = event.target as HTMLElement
+      if (
+        isMenuOpen && 
+        !target.closest('.mobile-menu-container') && 
+        !target.closest('button[aria-label*="menu"]')
+      ) {
         handleMenuClose()
       }
     }
@@ -143,18 +155,39 @@ const Navbar: React.FC = () => {
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 transition-colors duration-200"
+              onClick={handleMenuToggle}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
               aria-expanded={isMenuOpen}
-              aria-label="Toggle menu"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-controls="mobile-menu"
             >
               {isMenuOpen ? (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <svg 
+                  className="h-6 w-6" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M6 18L18 6M6 6l12 12" 
+                  />
                 </svg>
               ) : (
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <svg 
+                  className="h-6 w-6" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M4 6h16M4 12h16M4 18h16" 
+                  />
                 </svg>
               )}
             </button>
@@ -163,11 +196,13 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Menu */}
         <div 
-          className={`mobile-menu-container md:hidden transition-all duration-300 ease-in-out ${
+          id="mobile-menu"
+          className={`mobile-menu-container md:hidden transition-all duration-200 ease-in-out ${
             isMenuOpen 
-              ? 'opacity-100 translate-y-0 max-h-[500px]' 
-              : 'opacity-0 -translate-y-2 max-h-0 pointer-events-none'
+              ? 'opacity-100 translate-y-0 max-h-screen visible' 
+              : 'opacity-0 -translate-y-2 max-h-0 invisible'
           }`}
+          aria-hidden={!isMenuOpen}
           style={{ overflow: 'hidden' }}
         >
           <div className="pt-2 pb-3 space-y-1">
@@ -187,7 +222,7 @@ const Navbar: React.FC = () => {
             ))}
           </div>
           <div className="pt-4 pb-3 border-t border-gray-200">
-            <div className="space-y-3 p-4">
+            <div className="space-y-3 px-4">
               <Button 
                 variant="outline" 
                 size="sm" 
