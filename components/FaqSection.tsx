@@ -57,7 +57,7 @@ const FaqSection: React.FC = () => {
             <div key={index} className="transform transition-all duration-200 hover:scale-[1.01]">
               <Accordion 
                 title={faq.question}
-                className="bg-white rounded-xl shadow-md hover:shadow-lg border border-gray-100"
+                className="bg-white rounded-xl"
               >
                 <div className="p-6 bg-gradient-to-br from-gray-50 to-white">
                   <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
