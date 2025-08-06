@@ -1,6 +1,5 @@
 # 🚀 ADmyBRAND AI Suite - Marketing Automation Platform
 
-![Hero Banner](./public/dashboard-screenshot.png)
 
 <div align="center">
 
