@@ -14,7 +14,7 @@
 5. Implemented complex state management logic
 
 ### 💡 Prompts
-*1. "Create a Next.js 14 Hero component with:
+1. "Create a Next.js 14 Hero component with:
    - Gradient background with grid overlay
    - Animated CTA buttons (hover/focus states)
    - Responsive layout for mobile/desktop
@@ -50,7 +50,7 @@
    - Smooth height transitions
    - Chevron icon rotation
    - Accessibility attributes
-   - Dark/light mode support"*
+   - Dark/light mode support"
 
 
 ### ⚖️ AI vs Manual Work Split
