@@ -32,24 +32,18 @@
 - Tailwind CSS
 - React Icons
 
-**Developer Experience:**
-- ESLint
-- Prettier
-- Husky (Git hooks)
-
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js ≥ 18.x
 - npm ≥ 9.x or yarn
 
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/admybrand-ai-suite.git
+git clone <git repository url>
 
 # Navigate to project directory
-cd admybrand-ai-suite
+cd admybrandaitask
 
 # Install dependencies
 npm install
