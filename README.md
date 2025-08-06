@@ -56,11 +56,12 @@ npm install
 
 # Start development server
 npm run dev
+```
 
 
 
 
-📂 Project Structure
+#📂 Project Structure
 bash
 src/
 ├── app/                # Next.js app router
@@ -70,3 +71,9 @@ src/
 │   └── ...            # Other sections
 ├── public/            # Static assets
 └── styles/            # Global styles
+
+
+
+
+#🌐 Deployment
+https://vercel.com/button
