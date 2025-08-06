@@ -13,10 +13,45 @@
 4. Solved responsive design challenges
 5. Implemented complex state management logic
 
-### 💡 Sample Prompts
-1. *"Create a responsive landing page for 'ADmyBRAND AI Suite' with Next.js 14, TypeScript and Tailwind CSS including hero section, features grid, pricing cards, testimonials carousel and FAQ section"*
-2. *"Implement smooth scroll behavior for anchor links in Next.js with proper TypeScript typing"*
-3. *"Generate a comprehensive README.md for a Next.js marketing SaaS product with proper GitHub formatting and badges"*
+### 💡 Prompts
+*1. "Create a Next.js 14 Hero component with:
+   - Gradient background with grid overlay
+   - Animated CTA buttons (hover/focus states)
+   - Responsive layout for mobile/desktop
+   - TypeScript interfaces for all props"
+
+2. "Generate a features grid component showing 6 AI capabilities:
+   - Each card has icon, title, 2-line description
+   - Hover effect with scale transform
+   - Mobile: 1-col, Tablet: 2-col, Desktop: 3-col
+   Use Tailwind CSS only"
+
+3. "Build a testimonial carousel with:
+   - Auto-rotate every 8s (pause on hover)
+   - Fade transition between slides
+   - Dot navigation with active state
+   - Mobile touch swipe support"
+   
+4. "Design a pricing card component with:
+   - 3-tier toggle (monthly/yearly)
+   - 'Popular' badge with glow effect
+   - Feature comparison tooltips
+   - Animated hover transitions
+   Ensure WCAG AA contrast compliance"
+
+5. "Implement a responsive navbar with:
+   - Mobile hamburger menu (<768px)
+   - Sticky positioning
+   - Active link highlighting
+   - Smooth scroll to sections
+   No external libraries"
+
+6. "Create an animated FAQ accordion:
+   - Smooth height transitions
+   - Chevron icon rotation
+   - Accessibility attributes
+   - Dark/light mode support"*
+
 
 ### ⚖️ AI vs Manual Work Split
 | Category       | Percentage | Details |
