@@ -61,8 +61,9 @@ npm run dev
 
 
 
-#📂 Project Structure
-bash
+## 📂 Project Structure
+
+```bash
 src/
 ├── app/                # Next.js app router
 ├── components/         # Reusable components
@@ -72,8 +73,11 @@ src/
 ├── public/            # Static assets
 └── styles/            # Global styles
 
+```
 
 
 
-#🌐 Deployment
-https://vercel.com/button
+## 🌐 Deployment
+```
+https://admybrandaitask.vercel.app/
+```
