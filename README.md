@@ -56,3 +56,17 @@ npm install
 
 # Start development server
 npm run dev
+
+
+
+
+📂 Project Structure
+bash
+src/
+├── app/                # Next.js app router
+├── components/         # Reusable components
+│   ├── ui/            # UI primitives (Button, Card, etc.)
+│   ├── HeroSection.tsx # Landing page hero
+│   └── ...            # Other sections
+├── public/            # Static assets
+└── styles/            # Global styles
